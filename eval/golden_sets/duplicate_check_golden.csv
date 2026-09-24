@@ -1,0 +1,4 @@
+module_a,module_b,expected_similar,reason
+s3-bucket-standard,s3-bucket-legacy,true,"both provision an S3 bucket + SSE encryption, planted as a duplicate pair"
+s3-bucket-standard,vpc-base,false,"different purpose entirely - negative case"
+rds-postgres,vpc-base,false,"different purpose entirely - negative case"

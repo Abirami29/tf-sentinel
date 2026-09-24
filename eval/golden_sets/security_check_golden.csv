@@ -1,0 +1,5 @@
+module,expected_flag,expected_severity,reason
+security-group-web,true,high,"open ingress 0.0.0.0/0 on port 22 - this is actually caught by tflint/checkov, LLM should also not miss it as a sanity check"
+vpc-base,false,,"clean module - negative case, confirms no over-flagging"
+rds-postgres,false,,"skip_final_snapshot=true is real but now caught deterministically by check_deletion_protection.py, not by the LLM security_check - moved out of this golden set after 3 consecutive eval runs (0/3 pass) showed the LLM doesn't reliably catch this fixed presence/value check. Encryption itself is correctly configured, so this module is now a legitimate negative case for the LLM check specifically."
+s3-bucket-hardened,false,,"dedicated negative case - has encryption, public-access-block, AND versioning explicitly, built specifically to have zero real findings"

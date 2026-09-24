@@ -1,0 +1,7 @@
+pytest>=8.0
+python-hcl2>=4.3
+neo4j>=5.0
+python-dotenv>=1.2.3
+langchain-openai>=1.6.0
+apache-airflow-providers-standard
+apache-airflow-providers-common-ai[langchain]
